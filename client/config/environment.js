@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-do',
+    modulePrefix: 'client',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
