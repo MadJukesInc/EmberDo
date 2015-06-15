@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   addingMember: false,
   editingTitle: false,
 
-  tasks: this.model.findAll(),
+  tasks: model.findAll(),
 
   actions: {
     toggleAddMember: function (task) {

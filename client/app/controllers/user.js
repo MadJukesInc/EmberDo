@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   editUsers: false,
 
-  users: this.model.findAll(),
+  users: model.findAll(),
 
   actions: {
     deleteUser: function (user) {
