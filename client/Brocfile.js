@@ -38,4 +38,8 @@ app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.w
   destDir: 'fonts'
 });
 
+app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+
+app.import('bower_components/spinkit/css/spinkit.css');
+
 module.exports = app.toTree();
