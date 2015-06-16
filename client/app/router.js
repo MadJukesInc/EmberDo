@@ -9,6 +9,8 @@ Router.map(function() {
   this.route('user');
   this.route('sign-in');
   this.route('taskList');
+
+  this.route('404', { path: '/*404' } );
 });
 
 export default Router;
