@@ -22,10 +22,15 @@
   },
   "homepage": "https://github.com/MadJukesInc/EmberDo",
   "dependencies": {
+    "bluebird": "^2.9.30",
     "confidence": "^1.x.x",
     "glue": "^2.x.x",
     "hapi": "^8.x.x",
-    "hoek": "^2.x.x"
+    "hoek": "^2.x.x",
+    "lodash": "^3.9.3",
+    "pg": "^4.4.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.2.0"
   },
   "devDependencies": {
     "code": "^1.x.x",
