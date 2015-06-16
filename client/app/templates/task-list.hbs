@@ -11,16 +11,17 @@
             </span>
     </div>
 </form>
-<table class="table table-hover table-condensed">
-    <tr>
-        <th class="col-sm-2">Done</th>
-        <th class="col-sm-4">Title</th>
-        <th class="col-sm-4">Member</th>
-        <th class="col-sm-4">Owner</th>
-        <th class="col-sm-2"></th>
-    </tr>
-  {{#each tasks as |task|}}
-    {{task-entry element='tr' class='completed:success:danger' store=controller.store users=users task=task}}
-  {{/each}}
-</table>
+    <table class="table table-hover table-condensed">
+        <thead>
+            <th class="col-sm-1">Done</th>
+            <th class="col-sm-3">Title</th>
+            <th class="col-sm-3">Member</th>
+            <th class="col-sm-3">Owner</th>
+            <th class="col-sm-2"></th>
+        </thead>
+      {{#each tasks as |task|}}
+        {{task-entry element='tr' class='completed:success:danger' store=controller.store users=users task=task}}
+      {{/each}}
+    </table>
+</div>
 
