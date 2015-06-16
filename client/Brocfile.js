@@ -3,6 +3,18 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
+//app.import('bower_components/ember/ember-template-compiler.js');
+
+app.import('bower_components/lodash/lodash.js');
+
+//var HtmlbarsCompiler = require('ember-cli-htmlbars');
+//
+//var templateTree = new HtmlbarsCompiler('app/templates', {
+//  isHTMLBars: true,
+//
+//  // provide the templateCompiler that is paired with your Ember version
+//  templateCompiler: require('./bower_components/ember/ember-template-compiler')
+//});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
