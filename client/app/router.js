@@ -5,12 +5,12 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-Router.map(function() {
-  this.route('user');
-  this.route('sign-in');
-  this.route('taskList');
+Router.map(function () {
+  this.route('users');
+  this.route('login');
+  this.route('task-list');
 
-  this.route('404', { path: '/*404' } );
+  this.route('404', {path: '/*404'});
 });
 
 export default Router;
