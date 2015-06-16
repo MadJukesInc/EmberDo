@@ -3,8 +3,8 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   title: DS.attr('string'),
   completed: DS.attr('boolean'),
-  members: DS.hasMany('user'),
-  owner: DS.belongsTo('user')
+  members: DS.hasMany('user',{ async: true }),
+  owner: DS.belongsTo('user',{ async: true })
 });
 
 DS.Model.reopenClass({
