@@ -9,6 +9,13 @@
             <div class="row">
                 <div class="col">
                     <div class="notifications"></div>
+                    <div class="login">
+                      {{#if session.isAuthenticated}}
+                          <a {{ action 'invalidateSession' }}>Logout</a>
+                      {{else}}
+                        {{#link-to 'login'}}Login{{/link-to}}
+                      {{/if}}
+                    </div>
                 </div>
             </div>
             <div class="row">
