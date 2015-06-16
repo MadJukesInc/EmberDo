@@ -1,4 +1,15 @@
 .verticalSpacer {
-  height: 33%;
-  margin: 10px;
+  height: 10vh;
+}
+
+.tall {
+  height: 66vh;
+}
+
+.vertical-center {
+  min-height: 50%;
+  min-height: 50vh;
+
+  display: flex;
+  align-items: center;
 }
