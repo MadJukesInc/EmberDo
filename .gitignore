@@ -160,3 +160,6 @@ crashlytics-build.properties
 *.un~
 Session.vim
 .netrwhist
+
+client/node_modules
+client/tmp
