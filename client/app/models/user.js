@@ -8,6 +8,7 @@ export default DS.Model.extend({
 
 DS.Model.reopenClass({
   FIXTURES: [
-    {id: 1, username: 'pineauk', password: 'blah', role:'admin'}
+    {id: 1, username: 'pineauk', password: 'blah', role: 'admin'},
+    {id: 2, username: 'bob', password: 'bob', roles: 'user'}
   ]
 });
