@@ -1,4 +1,5 @@
 var Composer = require('./index');
+require('./database');
 
 
 Composer(function (err, server) {

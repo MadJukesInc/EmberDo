@@ -19,6 +19,20 @@ var config = {
     plugins: {
         api: {
             paths: ['api/tasks', 'api/users']
+        },
+        db: {
+            "database": "todo_test",
+            "user": "postgres",
+            "password": "",
+            "options": {
+                "host": "localhost",
+                "dialect": "postgres",
+                "pool": {
+                    "max": 5,
+                    "min": 0,
+                    "idle": 10000
+                }
+            }
         }
     }
 };
