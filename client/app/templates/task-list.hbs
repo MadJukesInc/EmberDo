@@ -1,7 +1,9 @@
-<form {{action 'addTask' on='submit'}} class="task-form">
-    <div class="input-group">
-      {{input value=formTask.title class='form-control' id='name'}}
-        <span class="input-group-btn">
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form {{action 'addTask' on='submit'}} class="task-form">
+            <div class="input-group">
+              {{input value=formTask.title class='form-control' id='name'}}
+                <span class="input-group-btn">
                 <button {{action 'addTask'}} class="btn btn-success" type="submit">
                     <span class="glyphicon glyphicon-plus"/>
                 </button>
@@ -9,8 +11,9 @@
                     <span class="glyphicon glyphicon-remove"/>
                 </button>
             </span>
+            </div>
+        </form>
     </div>
-</form>
     <table class="table table-hover table-condensed">
         <thead>
             <th class="col-sm-1">Done</th>
