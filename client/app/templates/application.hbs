@@ -1,14 +1,26 @@
-<div class="verticalSpacer"></div>
+<div class="row visible-lg">
+    <div class="col">
+        <div class="verticalSpacer"></div>
+    </div>
+</div>
 <div class="container">
-    <div class="notifications"></div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h1>HapiHamster</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="notifications"></div>
                 </div>
-                <div id="wrapper" class="content">
-                  {{outlet}}
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1>HapiHamster</h1>
+                        </div>
+                        <div class="panel-body tall">
+                          {{outlet}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
