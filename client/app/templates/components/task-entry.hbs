@@ -23,7 +23,6 @@
     <div class="col-sm-10">
       {{#if addingMember}}
           <div class="input-group">
-
             {{view 'select'
             content=users
             class='form-control'
@@ -50,7 +49,6 @@
             {{/if}}
           </div>
       {{/if}}
-
     </div>
 </td>
 <td>
@@ -59,7 +57,7 @@
     </div>
 </td>
 <td>
-    <button type="button" class="btn btn-danger delete-task" {{action 'deleteTask' task}}>
-        <span class="glyphicon glyphicon-remove"></span>
+    <button type="button" class="btn btn-danger btn-xs delete-task" {{action 'deleteTask' task}}>
+        <span class="glyphicon glyphicon-trash"></span>
     </button>
 </td>
