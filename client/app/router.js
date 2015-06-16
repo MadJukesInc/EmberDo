@@ -6,9 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('task');
   this.route('user');
   this.route('sign-in');
+  this.route('taskList');
 });
 
 export default Router;
