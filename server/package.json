@@ -12,7 +12,9 @@
     "type": "git",
     "url": "http://github.com/MadJukesInc/EmberDo"
   },
-  "keywords": [""],
+  "keywords": [
+    ""
+  ],
   "author": "MadJukesInc <kpineau@upei.ca>",
   "license": "MIT",
   "bugs": {
