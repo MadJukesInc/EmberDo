@@ -24,7 +24,7 @@ var manifest = {
         labels: ['api']
     }],
     plugins: {
-        './server/api/index': {}
+        './server/api/index': Config.get('/plugins/api')
     }
 };
 

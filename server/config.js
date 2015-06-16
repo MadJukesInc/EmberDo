@@ -15,6 +15,11 @@ var config = {
             test: 9090,
             $default: 8080
         }
+    },
+    plugins: {
+        api: {
+            paths: ['api/tasks', 'api/users']
+        }
     }
 };
 
