@@ -2,10 +2,12 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  classNameBindings: ['isCompleted:success:danger'],
   tagName: 'tr',
   addingMember: false,
   editingTitle: false,
   selectedMember: '',
+  isCompleted: true,
 
   isOwner: function () {
     return this.get('task.owner') === 1;
