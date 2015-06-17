@@ -13,6 +13,8 @@ export default Ember.Controller.extend({
       var user = this.get('userLogin').getProperties('username', 'password');
       var self = this;
       Ember.$.post('http://localhost:8088/external_login', user, function (result) {
+        //http://stackoverflow.com/questions/24963677/can-i-use-ember-simple-auth-with-express-passport-session-domain-cookies
+        //This is a magical link of goodness
         if(result.passport.user) {
           self.transitionTo('task-list');
         }
