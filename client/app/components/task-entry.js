@@ -15,7 +15,6 @@ export default Ember.Component.extend({
 
   initialize: function () {
     this.set('isCompleted', this.get('task.completed'));
-    console.log(this.get('task'));
   }.on('init'),
 
   toggleCompleted: function () {
@@ -30,22 +29,24 @@ export default Ember.Component.extend({
     toggleTitleEdit: function () {
       this.set('editingTitle', true);
     },
-    toggleCheckboc: function () {
-      console.log(this.get('task.completed'));
-      this.get('task').save();
-    },
     addMember: function (task) {
       this.get('task.members').addObject(this.get('selectedMember'));
       this.get('task').save();
       this.set('addingMember', false);
     },
     deleteTask: function (task) {
+      //task.destroy();
+      //var self = this;
+      //_.forEach(this.get('task.members'), function (member) {
+      //  self.get('task.members').removeObject(member);
+      //});
+      //this.get('task').save();
       this.store.deleteRecord(task);
       task.save();
     },
-    removeMember: function (task, member) {
+    removeMember: function (member) {
       this.get('task.members').removeObject(member);
-      task.save();
+      this.get('task').save();
     },
     updateTitle: function (task) {
       task.save();
