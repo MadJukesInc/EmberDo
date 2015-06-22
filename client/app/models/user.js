@@ -6,9 +6,9 @@ export default DS.Model.extend({
   role: DS.attr('string')
 });
 
-DS.Model.reopenClass({
-  FIXTURES: [
-    {id: 1, username: 'pineauk', password: 'blah', role: 'admin'},
-    {id: 2, username: 'bob', password: 'bob', roles: 'user'}
-  ]
-});
+//DS.Model.reopenClass({
+//  FIXTURES: [
+//    {id: 1, username: 'pineauk', password: 'blah', role: 'admin'},
+//    {id: 2, username: 'bob', password: 'bob', roles: 'user'}
+//  ]
+//});

@@ -7,8 +7,8 @@ export default DS.Model.extend({
   owner: DS.belongsTo('user',{ async: true })
 });
 
-DS.Model.reopenClass({
-  FIXTURES: [
-    {id: 1, title: 'test 1', completed: false, members: [1], owner: 1}
-  ]
-});
+//DS.Model.reopenClass({
+//  FIXTURES: [
+//    {id: 1, title: 'test 1', completed: false, members: [1], owner: 1}
+//  ]
+//});
