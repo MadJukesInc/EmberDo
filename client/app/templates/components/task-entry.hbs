@@ -38,7 +38,7 @@
           </div>
       {{else}}
           <div class="btn-group" role="group" aria-label="...">
-            {{#each member in task.members}}
+            {{#each task.members as |member|}}
                 <button {{action 'removeMember' member}} class="btn btn-default btn-xs">
                   {{member.username}}
                 </button>
