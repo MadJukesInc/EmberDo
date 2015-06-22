@@ -14,7 +14,7 @@ export default Ember.ArrayController.extend({
       newTask.owner = this.get('formTask.owner');
       newTask.completed = false;
 
-      var record = this.store.createRecord('task',newTask).save();
+      this.store.createRecord('task',newTask);
       this.set('formTask.title', '');
     }
   }
