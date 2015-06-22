@@ -9,12 +9,12 @@ export default Ember.ArrayController.extend({
   actions: {
     addTask: function () {
       var newTask = {};
-      newTask.title = this.get('formTask.title');
 
-      //newTask.owner = 1;
-      //newTask.members = ['pineau'];
+      newTask.title = this.get('formTask.title');
+      newTask.owner = this.get('formTask.owner');
       newTask.completed = false;
-      this.store.createRecord('task',newTask);
+
+      var record = this.store.createRecord('task',newTask).save();
       this.set('formTask.title', '');
     }
   }
