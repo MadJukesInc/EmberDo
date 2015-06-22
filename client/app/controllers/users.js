@@ -1,16 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
-  editUsers: false,
+  init: function () {
+    this.set('newUser', Ember.Object.create());
+
+  },
 
   actions: {
-    deleteUser: function (user) {
-      //this.model.delete(user);
-    },
-    addUser: function () {
-      //var newUser = {};
-      //
-      //this.model.create(newUser);
+    createUser: function () {
+      var newUser = {};
+      newUser.username = this.get('newUser.username');
+      newUser.password = this.get('newUser.password');
+      newUser.role = this.get('newUser.role');
+      this.store.createRecord('user',newUser).save();
+      this.set('newUser.username', '');
+      this.set('newUser.password', '');
+      this.set('newUser.role', '');
     }
   }
 });
