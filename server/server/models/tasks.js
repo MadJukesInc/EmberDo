@@ -69,7 +69,10 @@ var TasksModel = function TasksModelConstructor() {
         put: function (id, task, cb) {
             return Tasks.update(task, { where: { id: id } })
                 .then(function (affected) {
-                    cb(null, { 'affected': affected[0] });
+                    Tasks.findById(affected[0]).then(function (results) {
+                        cb(null, results);
+                    });
+                    //cb(null, { 'affected': affected[0] });
                 })
                 .catch(function (err) {
                     cb(err);
@@ -78,7 +81,10 @@ var TasksModel = function TasksModelConstructor() {
         delete: function (id, cb) {
             return Tasks.destroy({ where: { id: id } })
                 .then(function (affected) {
-                    cb(null, { 'affected': affected });
+                    //cb(null, { 'affected': affected });
+                    Tasks.findById(affected[0]).then(function (results) {
+                        cb(null, results);
+                    });
                 })
                 .catch(function (err) {
                     cb(err);
