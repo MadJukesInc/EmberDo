@@ -7,11 +7,21 @@ export default Ember.Component.extend({
   addingMember: false,
   editingTitle: false,
   selectedMember: '',
-  isCompleted: true,
+  isCompleted: undefined,
 
   isOwner: function () {
     return this.get('task.owner') === 1;
   },
+
+  initialize: function () {
+    this.set('isCompleted', this.get('task.completed'));
+    console.log(this.get('task'));
+  }.on('init'),
+
+  toggleCompleted: function () {
+    this.set('task.completed', this.get('isCompleted'));
+    this.get('task').save();
+  }.observes('isCompleted'),
 
   actions: {
     toggleAddMember: function () {
@@ -20,21 +30,22 @@ export default Ember.Component.extend({
     toggleTitleEdit: function () {
       this.set('editingTitle', true);
     },
-    toggleCompleted: function (task) {
-      var completed = !task.completed;
-      this.set('task.completed', completed).save();
+    toggleCheckboc: function () {
+      console.log(this.get('task.completed'));
+      this.get('task').save();
     },
     addMember: function (task) {
       this.get('task.members').addObject(this.get('selectedMember'));
-      this.get('task.members').save();
+      this.get('task').save();
       this.set('addingMember', false);
     },
     deleteTask: function (task) {
       this.store.deleteRecord(task);
+      task.save();
     },
     removeMember: function (task, member) {
       this.get('task.members').removeObject(member);
-      this.get('task.members').save();
+      task.save();
     },
     updateTitle: function (task) {
       task.save();
