@@ -25,14 +25,16 @@ export default Ember.Component.extend({
       this.set('task.completed', completed).save();
     },
     addMember: function (task) {
-      this.get('task.members').addObject(this.get('selectedMember')).save();
+      this.get('task.members').addObject(this.get('selectedMember'));
+      this.get('task.members').save();
       this.set('addingMember', false);
     },
     deleteTask: function (task) {
       this.store.deleteRecord(task);
     },
     removeMember: function (task, member) {
-      this.get('task.members').removeObject(member).save();
+      this.get('task.members').removeObject(member);
+      this.get('task.members').save();
     },
     updateTitle: function (task) {
       task.save();
