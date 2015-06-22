@@ -1,4 +1,4 @@
-var _     = require('lodash');
+var _ = require('lodash');
 var users = require('../../../models/users');
 
 var cbBuilder = function (request, reply) {
@@ -13,22 +13,34 @@ var cbBuilder = function (request, reply) {
 };
 
 module.exports = function (path, server) {
-    var onGet  = function (request, reply) {
+    var onGet = function (request, reply) {
         var userID = request.params.userID;
-        var cb     = cbBuilder(request, reply);
+        var cb = cbBuilder(request, reply);
 
         if (userID) {
-            users.get(userID, cb)
+            users.get(userID, function (err, results) {
+                cb(err, {
+                    user: results
+                });
+            })
         }
         else {
-            users.get(cb);
+            users.get(function (err, results) {
+                cb(err, {
+                    users: results
+                });
+            });
         }
     };
     var onPost = function (request, reply) {
-        var payload = request.payload;
-        var cb      = cbBuilder(request, reply);
+        var payload = request.payload.user;
+        var cb = cbBuilder(request, reply);
 
-        users.post(payload, cb);
+        users.post(payload, function (err, results) {
+            cb(err, {
+                user: results
+            });
+        });
     };
 
     server.route({

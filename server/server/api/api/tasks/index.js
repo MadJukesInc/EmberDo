@@ -12,24 +12,38 @@ var cbBuilder = function (request, reply) {
     };
 };
 
+
 module.exports = function (path, server) {
     var onTaskGet      = function (request, reply) {
         var user = request.auth.credentials || null;
+
         var cb   = cbBuilder(request, reply);
 
-        tasks.get(null, null, cb);
+        tasks.get(null, null, function(err, results) {
+            cb(err, {
+                tasks: results
+            });
+        });
     };
     var onTaskPost     = function (request, reply) {
-        var newTask = request.payload;
+        var newTask = request.payload.task;
         var cb      = cbBuilder(request, reply);
 
-        tasks.post(newTask, cb);
+        tasks.post(newTask, function(err, results) {
+            cb(err, {
+                task: results
+            });
+        });
     };
     var onTaskPut      = function (request, reply) {
-        var updTask = request.payload;
+        var updTask = request.payload.task;
         var cb      = cbBuilder(request, reply);
 
-        tasks.put(updTask.id, updTask, cb);
+        tasks.put(updTask.id, updTask, function(err, results) {
+            cb(err, {
+                task: results
+            });
+        });
     };
     var onTask         = function (request, reply) {
         switch (request.method) {
@@ -49,30 +63,47 @@ module.exports = function (path, server) {
         var user   = request.auth.credentials || null;
         var cb     = cbBuilder(request, reply);
 
-        tasks.get(taskID, user, cb);
+        tasks.get(taskID, user, function(err, results) {
+            cb(err, {
+                task: results
+            });
+        });
     };
     var onTaskIDPost   = function (request, reply) {
         var taskID = request.params.taskID;
-        var task   = request.payload;
+        var task   = request.payload.task;
         var user   = request.auth.credentials || null;
         var cb     = cbBuilder(request, reply);
 
-        tasks.put(taskID, task, cb);
+        tasks.put(taskID, task, function(err, results) {
+            cb(err, {
+                task: results
+            });
+        });
     };
     var onTaskIDPut    = function (request, reply) {
         var taskID = request.params.taskID;
-        var task   = request.payload;
+        var task   = request.payload.task;
         var user   = request.auth.credentials || null;
         var cb     = cbBuilder(request, reply);
 
-        tasks.put(taskID, task, cb);
+        tasks.put(taskID, task, function(err, results) {
+            cb(err, {
+                task: results
+            });
+        });
     };
     var onTaskIDDelete = function (request, reply) {
         var taskID = request.params.taskID;
+
         var user   = request.auth.credentials || null;
         var cb     = cbBuilder(request, reply);
 
-        tasks.delete(taskID, cb);
+        tasks.delete(taskID, function(err, results) {
+            cb(err, {
+                task: results
+            });
+        });
     };
     var onTaskID       = function (request, reply) {
         switch (request.method) {

@@ -15,7 +15,7 @@ var manifest = {
         },
         connections: {
             routes: {
-                security: true
+                cors: true
             }
         }
     },
