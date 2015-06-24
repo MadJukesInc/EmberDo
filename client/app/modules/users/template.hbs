@@ -24,15 +24,15 @@
     <th>Role</th>
     <th>Date Created:</th>
     </thead>
-    {{#each users as |user|}}
-    <tr class="entry" id="tr-{id}">
-        <td>{{user.id}}</td>
-        <td>{{user.username}}</td>
-        <td>{{user.password}}</td>
-        <td>{{user.role}}</td>
-        <td>{{user.createdAt}}</td>
-    </tr>
-    {{/each}}
+  {{#each users as |user|}}
+      <tr class="entry" id="tr-{id}">
+          <td>{{user.id}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.role}}</td>
+          <td>{{user.createdAt}}</td>
+      </tr>
+  {{/each}}
 </table>
 
 
