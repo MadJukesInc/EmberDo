@@ -10,9 +10,9 @@
                     404 Page Not Found: Make sure you typed in the correct address.
                 </div>
                 <div class="error-actions">
-                    <a href="/" class="btn btn-primary btn-lg">
-                        <span class="glyphicon glyphicon-home"></span>
-                        Take Me Home </a>
+                    {{#link-to 'login'}}
+                        <span class="btn btn-primary btn-lg glyphicon glyphicon-home">Take Me Home</span>
+                         {{/link-to}}
                 </div>
             </div>
         </div>
