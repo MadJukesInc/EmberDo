@@ -1,0 +1,64 @@
+<td>
+    <div class="col-md-10 col-md-offset-1">
+      {{input type='checkbox' checked=isCompleted}}
+    </div>
+</td>
+<td>
+  {{#if editingTitle}}
+      <div class="input-group input-group-sm col-sm-8">
+        {{input value=task.title class='form-control' id=task}}
+          <span class="input-group-btn">
+                        <button {{action 'updateTitle' task}} class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </span>
+      </div>
+  {{else}}
+      <div {{action 'toggleTitleEdit' on='doubleClick'}} class="row title collapse in" aria-expanded="true">
+        {{task.title}}
+      </div>
+  {{/if}}
+</td>
+<td>
+    <div class="col-sm-10">
+      {{#if addingMember}}
+          <div class="input-group">
+            {{view 'select'
+            content=users
+            class='form-control'
+            prompt='Please Choose a Member'
+            optionValuePath='content'
+            optionLabelPath='content.username'
+            value=selectedMember}}
+              <span class="input-group-btn">
+                        <button {{action 'addMember' task}} class="btn btn-default btn-sm ">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </span>
+          </div>
+      {{else}}
+          <div class="btn-group" role="group" aria-label="...">
+            {{#each task.members as |member|}}
+                <button {{action 'removeMember' member}} class="btn btn-default btn-xs">
+                  {{member.username}}
+                </button>
+            {{/each}}
+            {{#if isOwner}}
+                <button {{action 'toggleAddMember'}} class="btn btn-default btn-xs">
+                    <span class="glyphicon glyphicon-plus"> </span>
+                </button>
+            {{/if}}
+          </div>
+      {{/if}}
+    </div>
+</td>
+<td>
+    <div>
+      {{task.owner.username}}
+    </div>
+</td>
+<td>
+    <button type="button" class="btn btn-danger btn-xs delete-task" {{action 'deleteTask' task}}>
+        <span class="glyphicon glyphicon-trash"></span>
+    </button>
+</td>
