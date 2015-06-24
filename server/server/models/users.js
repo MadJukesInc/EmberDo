@@ -17,7 +17,7 @@ var UsersModel = function UsersModelConstructor() {
             }
 
             if (_.isNull(username)) {
-                found = Users.all();
+                found = Users.findAll({order: ['createdAt']});
             }
             else {
                 if (_.isString(username)) {
