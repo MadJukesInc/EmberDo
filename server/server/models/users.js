@@ -17,15 +17,15 @@ var UsersModel = function UsersModelConstructor() {
             }
 
             if (_.isNull(username)) {
-                found = Users.all();
+                found = Users.findAll({order: ['createdAt','username']});
             }
             else {
-                if (_.isString(username)) {
-                    found = Users.findOne({where: {username: username}});
-                }
-                else {
+                // if (_.isString(username)) {
+                //     found = Users.findOne({where: {username: username}});
+                // }
+                // else {
                     found = Users.findById(username);
-                }
+                // }
             }
 
             return found

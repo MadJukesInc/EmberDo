@@ -19,27 +19,21 @@ module.exports = function (path, server) {
 
         if (userID) {
             users.get(userID, function (err, results) {
-                cb(err, {
-                    user: results
-                });
+                cb(err,results);
             })
         }
         else {
             users.get(function (err, results) {
-                cb(err, {
-                    users: results
-                });
+                cb(err,results);
             });
         }
     };
     var onPost = function (request, reply) {
-        var payload = request.payload.user;
+        var payload = request.payload;
         var cb = cbBuilder(request, reply);
 
         users.post(payload, function (err, results) {
-            cb(err, {
-                user: results
-            });
+            cb(err,results);
         });
     };
 

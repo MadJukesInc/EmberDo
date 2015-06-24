@@ -30,7 +30,7 @@ var TasksModel = function TasksModelConstructor() {
 
             if (_.isNull(id)) {
                 //found = Tasks.findAll({where: {$or: [{owner: user.id},{ members: {$contains: [user.username]}}]}});
-                found = Tasks.findAll();
+                found = Tasks.findAll({order: ['createdAt','title']});
             }
             else {
                 found = Tasks.findById(id);
