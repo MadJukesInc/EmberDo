@@ -41,7 +41,7 @@ export default Ember.Component.extend({
       //  self.get('task.members').removeObject(member);
       //});
       //this.get('task').save();
-      this.store.deleteRecord(task);
+      task.deleteRecord();
       task.save();
     },
     removeMember: function (member) {
